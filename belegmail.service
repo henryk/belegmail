@@ -1,0 +1,14 @@
+[Unit]
+Description=belegmail application
+After=network.target
+
+[Service]
+User=belegmail
+WorkingDirectory=/home/belegmail
+ExecStart=/home/belegmail/.local/bin/belegmail /etc/belegmail.yaml
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
