@@ -4,7 +4,7 @@ Fetch attachments from IMAP and store them. Use ``pip install -e .`` to install.
 
 ## Example configuration
 
-```
+````yaml
 - name: example
   config:
     imap:
@@ -26,4 +26,17 @@ Fetch attachments from IMAP and store them. Use ``pip install -e .`` to install.
       module: directory
       path: "/home/user/win/cloud/Buchhaltung/DATEV Belegtransfer/Company/Rechnungseingang"
       tag: example
-```
+
+- name: nextcloud-example
+  config:
+    imap: # ...
+  
+    access: # ...
+  
+    store:
+      module: nextcloud
+      path: "https://cloud.example.org/remote.php/dav/files/someuser/Rechnungseingang/"
+      tag: example
+      username: someuser
+      password: hunter2
+````
